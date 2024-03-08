@@ -15,7 +15,7 @@ connectDB();
 //middlewares
 app.use(
   cors({
-    origin: ["https://blog-app-deployed-frontend.vercel.app"],
+    origin: ["https://blog-app-deployed-frontend.vercel.app/"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })
