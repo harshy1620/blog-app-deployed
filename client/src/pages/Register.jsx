@@ -30,7 +30,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "blog-app-deployed-api.vercel.app/user/register",
+        "https://blog-app-deployed-api.vercel.app/user/register",
         {
           name: inputs.name,
           email: inputs.email,
