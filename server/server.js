@@ -16,7 +16,7 @@ connectDB();
 app.use(
   cors({
     credentials: true,
-    origin: "https://blog-app-deployed-api.vercel.app",
+    origin: "https://blog-app-deployed-frontend.vercel.app",
     methods: ["POST", "GET", "DELETE", "PUT"]
   })
 );
