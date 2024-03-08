@@ -25,19 +25,19 @@ A blog app with all the CRUD operations.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/harshy1620/Blog_App
+   git clone https://github.com/harshy1620/blog-app-deployed.git
 
    ```
 
-2. Change into the project directory:
+2. Change into the server directory:
 
-- cd your-repo
+- cd server
 
 3. Install dependencies:
 
 - npm install
 
-4. Open a new terminal and change your repository to client directory:
+4. Open a new terminal and change into the client directory:
 
 - cd ..
 - cd client
@@ -48,7 +48,7 @@ A blog app with all the CRUD operations.
 
 ## Environment Variables
 
-Create a .env file in the root folder and add the following variables:
+Create a .env file in the server folder and add the following variables:
 
 - PORT
 - MONGO_URI
@@ -59,7 +59,7 @@ Create a .env file in the root folder and add the following variables:
 
 - After setting up the environment variables, you can run the application:
 
-1. Start the server by running the following command in the root foler:
+1. Start the server by running the following command in the server foler:
 
 - npm start
 - The server will listen on the port 8080
