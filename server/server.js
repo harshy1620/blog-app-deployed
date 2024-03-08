@@ -14,7 +14,7 @@ connectDB();
 
 //middlewares
 const allowedOrigins = [
-  "https://blog-app-deployed-api.vercel.app/",
+  "https://blog-app-deployed-api.vercel.app",
   // Add other allowed origins if needed
 ];
 
