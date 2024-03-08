@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 
 const UpdateBlog = () => {
+  axios.defaults.withCredentials = true;
   const { id } = useParams();
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
@@ -16,7 +17,7 @@ const UpdateBlog = () => {
   const getBlogDetail = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/blog/get-blog/${id}`
+        `blog-app-deployed-api.vercel.app/blog/get-blog/${id}`
       );
       if (data?.success) {
         setInputs({

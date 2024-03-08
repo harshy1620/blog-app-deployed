@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  axios.defaults.withCredentials = true;
   //state
   const [inputs, setInputs] = useState({
     email: "",
@@ -28,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/user/login",
+        "blog-app-deployed-api.vercel.app/user/login",
         {
           email: inputs.email,
           password: inputs.password,

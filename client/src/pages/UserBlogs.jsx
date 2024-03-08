@@ -3,6 +3,7 @@ import axios from "axios";
 import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
 const UserBlogs = () => {
+  axios.defaults.withCredentials = true;
   const [blogs, setBlogs] = useState([]);
   const [name, setName] = useState("");
 
@@ -11,7 +12,7 @@ const UserBlogs = () => {
     try {
       const id = localStorage.getItem("userId");
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/blog/user-blog/${id}`
+        `blog-app-deployed-api.vercel.app/blog/user-blog/${id}`
       );
       if (data?.success) {
         setBlogs(data?.userBlog.blogs);
@@ -41,7 +42,15 @@ const UserBlogs = () => {
           />
         ))
       ) : (
-        <h1 style={{ "textAlign":"center", "marginTop":"100px", "font-Weight":"bolder"}}>You Havent Created a blog</h1>
+        <h1
+          style={{
+            textAlign: "center",
+            marginTop: "100px",
+            "font-Weight": "bolder",
+          }}
+        >
+          You Havent Created a blog
+        </h1>
       )}
       <Footer />
     </div>

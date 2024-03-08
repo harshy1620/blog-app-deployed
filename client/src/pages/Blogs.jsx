@@ -4,13 +4,14 @@ import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
 
 const Blogs = () => {
+  axios.defaults.withCredentials = true;
   const [blogs, setBlogs] = useState([]);
 
   //get all blogs
   const getAllBlogs = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/blog/all-blog"
+        "blog-app-deployed-api.vercel.app/blog/all-blog"
       );
 
       if (data?.success) {
@@ -20,11 +21,11 @@ const Blogs = () => {
       console.log(error);
     }
   };
-  
+
   useEffect(() => {
     getAllBlogs();
   }, []);
-  
+
   return (
     <div>
       {blogs &&
@@ -40,7 +41,7 @@ const Blogs = () => {
             time={blog.createdAt}
           />
         ))}
-        <Footer />
+      <Footer />
     </div>
   );
 };

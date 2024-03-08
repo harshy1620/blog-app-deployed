@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 
 const CreateBlog = () => {
+  axios.defaults.withCredentials = true;
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -36,7 +37,7 @@ const CreateBlog = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/blog/create-blog",
+        "blog-app-deployed-api.vercel.app/blog/create-blog",
         {
           title: inputs.title,
           description: inputs.description,

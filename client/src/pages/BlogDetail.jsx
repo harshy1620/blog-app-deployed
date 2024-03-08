@@ -15,13 +15,14 @@ import {
 import Footer from "../components/Footer";
 
 const BlogDetail = () => {
+  axios.defaults.withCredentials = true;
   const { id } = useParams();
   const [blog, setBlog] = useState({});
 
   const getBlogDetail = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/blog/get-blog/${id}`
+        `blog-app-deployed-api.vercel.app/blog/get-blog/${id}`
       );
       if (data?.success) {
         setBlog(data?.blog);

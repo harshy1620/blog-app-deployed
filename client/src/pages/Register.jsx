@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  axios.defaults.withCredentials = true;
   //state
   const [inputs, setInputs] = useState({
     name: "",
@@ -29,7 +30,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/user/register",
+        "blog-app-deployed-api.vercel.app/user/register",
         {
           name: inputs.name,
           email: inputs.email,

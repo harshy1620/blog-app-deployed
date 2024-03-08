@@ -25,6 +25,7 @@ export default function BlogCard({
   id,
   isUser,
 }) {
+  axios.defaults.withCredentials = true;
   // Changing the date and time format
   const createdAt = new Date(time);
   const formattedDate = `${createdAt.toLocaleDateString("en-US", {
@@ -49,7 +50,7 @@ export default function BlogCard({
   const handleDelete = async () => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:8080/api/v1/blog/delete-blog/${id}`
+        `blog-app-deployed-api.vercel.app/blog/delete-blog/${id}`
       );
       if (data?.success) {
         toast.success("Blog deleted successfully.");
