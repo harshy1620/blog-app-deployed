@@ -13,10 +13,8 @@ dotenv.config();
 connectDB();
 
 //middlewares
-const allowedOrigins = [
-  "https://blog-app-deployed-api.vercel.app",
-  // Add other allowed origins if needed
-];
+const allowedOrigins = "https://blog-app-deployed-api.vercel.app";
+
 
 app.use(
   cors({
