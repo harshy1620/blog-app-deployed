@@ -11,7 +11,7 @@ const Blogs = () => {
   const getAllBlogs = async () => {
     try {
       const { data } = await axios.get(
-        "blog-app-deployed-api.vercel.app/blog/all-blog"
+        "https://blog-app-deployed-api.vercel.app/blog/all-blog"
       );
 
       if (data?.success) {

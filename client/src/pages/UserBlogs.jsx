@@ -12,7 +12,7 @@ const UserBlogs = () => {
     try {
       const id = localStorage.getItem("userId");
       const { data } = await axios.get(
-        `blog-app-deployed-api.vercel.app/blog/user-blog/${id}`
+        `https://blog-app-deployed-api.vercel.app/blog/user-blog/${id}`
       );
       if (data?.success) {
         setBlogs(data?.userBlog.blogs);

@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {
-  Box,
-  Button,
-  InputLabel,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -37,7 +31,7 @@ const CreateBlog = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "blog-app-deployed-api.vercel.app/blog/create-blog",
+        "https://blog-app-deployed-api.vercel.app/blog/create-blog",
         {
           title: inputs.title,
           description: inputs.description,

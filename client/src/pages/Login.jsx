@@ -29,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "blog-app-deployed-api.vercel.app/user/login",
+        "https://blog-app-deployed-api.vercel.app/user/login",
         {
           email: inputs.email,
           password: inputs.password,

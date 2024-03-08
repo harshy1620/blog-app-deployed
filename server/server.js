@@ -13,13 +13,25 @@ dotenv.config();
 connectDB();
 
 //middlewares
+const allowedOrigins = [
+  "https://blog-app-deployed-api.vercel.app/",
+  // Add other allowed origins if needed
+];
+
 app.use(
   cors({
-    origin: ["https://blog-app-deployed-frontend.vercel.app"],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(morgan("dev"));
 

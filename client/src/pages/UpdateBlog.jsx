@@ -17,7 +17,7 @@ const UpdateBlog = () => {
   const getBlogDetail = async () => {
     try {
       const { data } = await axios.get(
-        `blog-app-deployed-api.vercel.app/blog/get-blog/${id}`
+        `https://blog-app-deployed-api.vercel.app/blog/get-blog/${id}`
       );
       if (data?.success) {
         setInputs({
